@@ -34,6 +34,11 @@
       programs.zsh.enable = true;  # default shell on catalina
       # programs.fish.enable = true;
 
+      system.defaults = {
+        dock.autohide = true;
+        screencapture.location = "~/Screenshots";
+      };
+
       # sudo with touch ID
       security.pam.enableSudoTouchIdAuth = true;
 
