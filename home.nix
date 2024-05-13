@@ -10,7 +10,7 @@
 
   home.packages = [
     pkgs.git
-    pkgs.nvim
+    pkgs.neovim
     pkgs.tmux
   ];
 

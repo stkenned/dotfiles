@@ -34,7 +34,8 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
+  # TODO: pass self properly
+  #system.configurationRevision = self.rev or self.dirtyRev or null;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
@@ -47,4 +48,4 @@
     name = "scott";
     home = "/Users/scott";
   }; 
-};
+}
