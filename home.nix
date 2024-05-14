@@ -4,6 +4,7 @@
 
   imports = [
     ./home/git.nix
+    ./home/neovim.nix
     ./home/tmux.nix
     ./home/zsh.nix
   ];
@@ -26,7 +27,6 @@
     pkgs.ripgrep
     pkgs.terraform
     pkgs.tmux
-    pkgs.vim
     pkgs.wget
     pkgs.xz
   ];

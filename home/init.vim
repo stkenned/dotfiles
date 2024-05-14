@@ -1,23 +1,3 @@
-call plug#begin()
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'sainnhe/edge'
-Plug 'nvim-treesitter/nvim-treesitter'
-
-Plug 'szw/vim-maximizer'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-writer.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-call plug#end()
-
 "
 " Plugin configs
 "
