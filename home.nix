@@ -3,17 +3,12 @@
   programs.zsh.enable = true;
 
   imports = [
+    ./home/direnv.nix
     ./home/git.nix
     ./home/neovim.nix
     ./home/tmux.nix
     ./home/zsh.nix
   ];
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
 
   home.packages = [
     pkgs.fzf
