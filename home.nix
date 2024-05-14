@@ -8,11 +8,6 @@
     ./home/zsh.nix
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnsupportedSystem = true;
-  };
-
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
