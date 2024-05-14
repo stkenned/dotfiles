@@ -51,16 +51,6 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <silent>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
-" Treesitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  highlight = {
-    enable = true,
-  },
-}
-EOF
-
 "
 " Vim configs
 "
