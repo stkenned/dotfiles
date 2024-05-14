@@ -19,7 +19,6 @@
       telescope-fzf-writer-nvim
       vim-fugitive
       vim-gitgutter
-      vim-maximizer
     ];
   };
 }
