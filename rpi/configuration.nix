@@ -46,6 +46,7 @@
       shell = pkgs.zsh;
     };
   };
+  programs.zsh.enable = true;
 
   # Networking setup (SSH + Tailscale w/exit node)
 
