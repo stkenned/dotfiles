@@ -3,8 +3,14 @@
 {
   imports =
     [ # Include the results of the hardware scan. Do not edit that file.
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
+
+  environment.systemPackages = with pkgs; [
+    git
+    tailscale
+    vim
+  ];
 
   # Use flakes to manage configs
   nix.settings.experimental-features = "nix-command flakes";
@@ -25,33 +31,11 @@
   # Enables the generation of /boot/extlinux/extlinux.conf
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  networking = {
-    hostName = "nixos";
-    #wireless = {
-    #  enable = true;
-    #  networks."ENTER NETWORK NAME".psk = "ENTER PASSWORD";
-    #  interfaces = [ "wlan0" ];
-    #};
-  };
-
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    tmux
-    vim
-  ];
-
-  environment.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -60,31 +44,19 @@
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       shell = pkgs.zsh;
-      packages = with pkgs; [
-        fzf
-        git
-        jq
-        ripgrep
-        tailscale
-      ];
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
+  # Networking setup (SSH + Tailscale w/exit node)
 
-    ohMyZsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "git"
-        "sudo"
-      ];
-    };
+  networking = {
+    hostName = "nixos";
+    #wireless = {
+    #  enable = true;
+    #  networks."ENTER NETWORK NAME".psk = "ENTER PASSWORD";
+    #  interfaces = [ "wlan0" ];
+    #};
   };
-
-  # List services that you want to enable:
 
   services.tailscale = {
     enable = true;
@@ -110,11 +82,6 @@
     # allow SSH
     allowedTCPPorts = [ 22 ];
   };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
