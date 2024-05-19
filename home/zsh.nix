@@ -22,8 +22,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      GCEVM_USERNAME = "scott";
-      VAULT_ADDR = https://vault.goval.replit.com;
     };
 
     plugins = [
