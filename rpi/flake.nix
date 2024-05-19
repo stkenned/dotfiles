@@ -8,8 +8,9 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:  
+  {
     # Build flake using:
-    # $ nixos-rebuild switch --flake .#rpi
+    # $ nixos-rebuild switch --flake .#nixos
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [
