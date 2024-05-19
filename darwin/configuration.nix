@@ -15,6 +15,9 @@
       pkgs.vim
     ];
 
+  # Use flakes to manage configs
+  nix.settings.experimental-features = "nix-command flakes";
+
   # With rosetta installed, can run Intel binaries
   nix.extraOptions = ''
     extra-platforms = x86_64-darwin aarch64-darwin
@@ -26,12 +29,10 @@
 
   services.tailscale.enable = true;
 
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
-
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
 
+  # MacOS specific
   system.defaults = {
     dock.autohide = true;
     screencapture.location = "~/Screenshots";
