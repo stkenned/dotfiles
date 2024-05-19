@@ -11,8 +11,8 @@
   environment.systemPackages =
     [
       pkgs.git
+      pkgs.neovim
       pkgs.tailscale
-      pkgs.vim
     ];
 
   # Use flakes to manage configs

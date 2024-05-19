@@ -8,8 +8,8 @@
 
   environment.systemPackages = with pkgs; [
     git
+    neovim
     tailscale
-    vim
   ];
 
   # Use flakes to manage configs
@@ -48,6 +48,10 @@
   };
   # Also set in ../home/zsh.nix but this prevents warnings
   programs.zsh.enable = true;
+
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   # Networking setup (SSH + Tailscale w/exit node)
 
