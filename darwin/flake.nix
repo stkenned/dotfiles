@@ -12,7 +12,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#MacBook
+    # $ darwin-rebuild switch --flake .#MacBook
     darwinConfigurations."MacBook" = nix-darwin.lib.darwinSystem {
       modules = [
         ./configuration.nix
@@ -21,9 +21,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.scott = import ../home.nix;
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home-darwin.nix
         }
       ];
     };
