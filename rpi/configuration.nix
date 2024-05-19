@@ -46,21 +46,8 @@
       shell = pkgs.zsh;
     };
   };
-
-  # TODO: this should come from ../home/zsh.nix, figure out why it didn't work
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    ohMyZsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "git"
-        "sudo"
-      ];
-    };
-  };
+  # Also set in ../home/zsh.nix but this prevents warnings
+  programs.zsh.enable = true;
 
   # Networking setup (SSH + Tailscale w/exit node)
 
