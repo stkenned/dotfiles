@@ -15,6 +15,7 @@
     # $ darwin-rebuild switch --flake .#MacBook
     darwinConfigurations."MacBook" = nix-darwin.lib.darwinSystem {
       modules = [
+        ../common-configuration.nix
         ./configuration.nix
         home-manager.darwinModules.home-manager
         {

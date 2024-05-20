@@ -1,23 +1,13 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan. Do not edit that file.
+  imports = [
+      # Include the results of the hardware scan. Do not edit that file.
       ./hardware-configuration.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    tailscale
   ];
 
-  # Use flakes to manage configs
-  nix.settings.experimental-features = "nix-command flakes";
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnsupportedSystem = true;
+  environment.sessionVariables = {
+    EDITOR = "nvim";
   };
 
   # Auto update
@@ -46,12 +36,6 @@
       shell = pkgs.zsh;
     };
   };
-  # Also set in ../home/zsh.nix but this prevents warnings
-  programs.zsh.enable = true;
-
-  environment.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   # Networking setup (SSH + Tailscale w/exit node)
 
@@ -64,10 +48,8 @@
     #};
   };
 
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "both";
-  };
+  # Allow being an exit node
+  services.tailscale.useRoutingFeatures = "both";
 
   # Enable the OpenSSH daemon.
   services.openssh = {

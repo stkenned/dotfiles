@@ -1,23 +1,6 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnsupportedSystem = true;
-  };
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [
-      pkgs.git
-      pkgs.neovim
-      pkgs.tailscale
-    ];
-
-  # Use flakes to manage configs
-  nix.settings.experimental-features = "nix-command flakes";
-
   # With rosetta installed, can run Intel binaries
   nix.extraOptions = ''
     extra-platforms = x86_64-darwin aarch64-darwin
@@ -26,8 +9,6 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
-
-  services.tailscale.enable = true;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
