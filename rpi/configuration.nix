@@ -6,6 +6,16 @@
       ./hardware-configuration.nix
   ];
 
+  # Don't forget to set a password with ‘passwd’ at initial setup.
+  users = {
+    mutableUsers = true;
+    users.scott = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      shell = pkgs.zsh;
+    };
+  };
+
   environment.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -26,16 +36,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users = {
-    mutableUsers = true;
-    users.scott = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ];
-      shell = pkgs.zsh;
-    };
-  };
 
   # Networking setup (SSH + Tailscale w/exit node)
 
