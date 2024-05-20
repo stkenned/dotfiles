@@ -16,13 +16,12 @@
     pkgs.git
     (pkgs.google-cloud-sdk.withExtraComponents [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     pkgs.jq
-    # Intalled in import
+    # Installed in import above to bundle plugins
     #pkgs.neovim
     pkgs.nixpkgs-fmt
     pkgs.nodejs_22
     pkgs.python3
     pkgs.ripgrep
-    pkgs.terraform
     pkgs.tmux
     pkgs.wget
     pkgs.xz
