@@ -6,6 +6,7 @@
     ./home/direnv.nix
     ./home/git.nix
     ./home/neovim.nix
+    ./home/ssh.nix
     ./home/tmux.nix
     ./home/zsh.nix
   ];
