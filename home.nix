@@ -21,7 +21,7 @@
     #pkgs.neovim
     pkgs.nixpkgs-fmt
     pkgs.nodejs_20
-    pkgs.nodejs_20.nodePackages.pnpm
+    pkgs.nodePackages.pnpm
     pkgs.python3
     pkgs.ripgrep
     pkgs.tmux
