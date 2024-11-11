@@ -20,7 +20,8 @@
     # Installed in import above to bundle plugins
     #pkgs.neovim
     pkgs.nixpkgs-fmt
-    pkgs.nodejs_22
+    pkgs.nodejs_20
+    pkgs.nodejs_20.nodePackages.pnpm
     pkgs.python3
     pkgs.ripgrep
     pkgs.tmux
