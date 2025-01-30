@@ -22,6 +22,7 @@
     pkgs.nixpkgs-fmt
     pkgs.nodejs_20
     pkgs.nodePackages.pnpm
+    pkgs.nodePackages.prettier
     pkgs.python3
     pkgs.ripgrep
     pkgs.tmux
