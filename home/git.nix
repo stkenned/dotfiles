@@ -3,9 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Scott Kennedy";
-    userEmail = "stkenned@gmail.com";
-    extraConfig = {
+    user = {
+      name = "Scott Kennedy";
+      email = "stkenned@gmail.com";
+    };
+    settings = {
       push = {
         default = "current";
         autoSetupRemote = true;
