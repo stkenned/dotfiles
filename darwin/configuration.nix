@@ -12,17 +12,14 @@
     extra-platforms = x86_64-darwin aarch64-darwin
   '';
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   # MacOS specific
   system.defaults = {
     dock.autohide = true;
     screencapture.location = "~/Screenshots";
   };
 
-  # sudo with touch ID
-  security.pam.enableSudoTouchIdAuth = true;
+  # Required to use above system.defaults options
+  system.primaryUser = "scott";
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
