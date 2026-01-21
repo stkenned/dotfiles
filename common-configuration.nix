@@ -12,6 +12,9 @@
     tailscale
   ];
 
+  # Allow Determinate to manage Nix
+  nix.enable = false;
+
   # Use flakes to manage configs
   nix.settings.experimental-features = "nix-command flakes";
 
