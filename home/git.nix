@@ -3,10 +3,8 @@
 {
   programs.git = {
     enable = true;
-    user = {
-      name = "Scott Kennedy";
-      email = "stkenned@gmail.com";
-    };
+    userName = "Scott Kennedy";
+    userEmail = "stkenned@gmail.com";
     settings = {
       push = {
         default = "current";
