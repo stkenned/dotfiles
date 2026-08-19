@@ -13,6 +13,7 @@
 
   home.packages = [
     pkgs.claude-code
+    pkgs.codex
     pkgs.fzf
     pkgs.gh
     pkgs.git
